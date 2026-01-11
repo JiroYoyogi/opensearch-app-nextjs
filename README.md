@@ -61,7 +61,7 @@
 - ドメインアクセスポリシー
   - ドメインレベルのアクセスポリシーを設定
 - ビジュアルエディタ
-  - 発信元IPアドレスで自身のIPアドレスを許可
+  - 発信元IPアドレスで自身のIPアドレスを許可（※）
 
 # インデックス作成
 
@@ -181,7 +181,7 @@ POST /aozora/_doc/3
 
 ## データ検索
 
-`match_all`としても、デフォルトではマッチ度の高い順に10件
+- **全件表示** (デフォルト10件、sizeで指定)
 
 ```
 GET /aozora/_search
@@ -189,11 +189,11 @@ GET /aozora/_search
   "query": {
     "match_all": {}
   },
-  "size": 100,
+  "size": 100
 }
 ```
 
-titleのみから検索
+- **特定フィールドのみ検索** (match)
 
 ```
 GET /aozora/_search
@@ -206,7 +206,7 @@ GET /aozora/_search
 }
 ```
 
-titleとsummaryから検索
+- **複数フィールドから検索** (multi_match)
 
 ```
 GET /aozora/_search
@@ -220,7 +220,7 @@ GET /aozora/_search
 }
 ```
 
-summaryにのみ「小説」を含む。かつ、titleに「小説」を含まない
+- **条件の組み合わせ** (bool) ... 「Aを含むがBは含まない」など
 
 ```
 GET /aozora/_search
