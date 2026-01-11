@@ -51,7 +51,9 @@ export async function searchAozora(keyword: string): Promise<SearchResult[]> {
             query: keyword,
             fields: ["title", "summary"],
             type: "most_fields",
-            // operator: "and" // 飲食店を「飲食」or「店」を含む検索にしない設定
+            // or ... 飲食店で検索「飲食」または「店」のどちらかを含む
+            // and ... 飲食店で検索「飲食」と「店」のどちらを含む
+            operator: "or" 
           },
         },
         highlight: {
