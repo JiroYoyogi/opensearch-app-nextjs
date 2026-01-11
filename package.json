@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "upload": "node ./upload/index.mjs"
+    "upload-data": "node ./upload-data/index.mjs"
   },
   "dependencies": {
     "@opensearch-project/opensearch": "^3.5.1",
