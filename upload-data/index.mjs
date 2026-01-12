@@ -9,7 +9,7 @@ const OPENSEARCH_URL = process.env.OPENSEARCH_URL ?? "";
 const OPENSEARCH_INDEX = process.env.OPENSEARCH_INDEX ?? "";
 const USERNAME = process.env.OPENSEARCH_USERNAME ?? "";
 const PASSWORD = process.env.OPENSEARCH_PASSWORD ?? "";
-const DATA_DIR = "./data";
+const DATA_DIR = "./upload-data/data";
 
 const client = new Client({
   node: OPENSEARCH_URL,
