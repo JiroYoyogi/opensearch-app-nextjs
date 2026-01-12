@@ -231,7 +231,7 @@ GET /aozora/_search
         { "match": { "summary": "小説" } }
       ],
       "must_not": [
-        { "match": { "title": "小説" } }
+        { "match": { "title": "総論" } }
       ]
     }
   }
