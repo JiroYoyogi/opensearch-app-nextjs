@@ -258,7 +258,7 @@ npm install
 データのアップロードプログラムを実行
 
 ```
-npm run upload
+npm run upload-data
 ```
 
 データ件数を確認
