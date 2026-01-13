@@ -63,6 +63,33 @@
 - ビジュアルエディタ
   - 発信元IPアドレスで自身のIPアドレスを許可
 
+↓アクセスポリシーのサンプル↓
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": [
+        "es:*"
+      ],
+      "Resource": "arn:aws:es:ap-northeast-1:AWSアカウントID:domain//*",
+      "Condition": {
+        "IpAddress": {
+          "aws:SourceIp": [
+            "IPアドレス/32"
+          ]
+        }
+      }
+    }
+  ]
+}
+```
+
 # インデックス作成
 
 ## コマンド
